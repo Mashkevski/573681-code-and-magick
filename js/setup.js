@@ -13,7 +13,8 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 var firstNames = [
   'Иван',
   'Хуан Себастьян',
-  'Мария','Кристоф',
+  'Мария',
+  'Кристоф',
   'Виктор',
   'Юлия',
   'Люпита',
@@ -46,10 +47,11 @@ var eyesColors = [
 
 var randomArrayElement = function (array) {
   if (array) {
-    var randomIndex = Math.round(Math.random() * (array.length - 1)); 
+    var randomIndex = Math.round(Math.random() * (array.length - 1));
     return array[randomIndex];
-  } 
-}
+  }
+  return null;
+};
 
 var renderRandomWizard = function () {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -58,9 +60,9 @@ var renderRandomWizard = function () {
     .textContent = randomArrayElement(firstNames) + ' ' + randomArrayElement(lastNames);
   wizardElement.querySelector('.wizard-coat').style.fill = randomArrayElement(coatColors);
   wizardElement.querySelector('.wizard-eyes').style.fill = randomArrayElement(eyesColors);
-  
+
   return wizardElement;
-}
+};
 
 var fragment = document.createDocumentFragment();
 for (var i = 0; i < 4; i++) {
