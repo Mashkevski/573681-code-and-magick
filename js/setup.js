@@ -125,13 +125,17 @@ var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var fireballWrap = document.querySelector('.setup-fireball-wrap');
 var fireballInput = fireballWrap.querySelector('input');
+var wizardCoatInput = document.querySelector('.setup-wizard-appearance input[name=coat-color]');
+var wizardEyesInput = document.querySelector('.setup-wizard-appearance input[name=eyes-color]');
 
 wizardCoat.addEventListener('click', function () {
   wizardCoat.style.fill = getRandomArrayElement(coatColors);
+  wizardCoatInput.value = wizardCoat.style.fill;
 });
 
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = getRandomArrayElement(eyesColors);
+  wizardEyesInput.value = wizardEyes.style.fill;
 });
 
 fireballWrap.addEventListener('click', function () {
