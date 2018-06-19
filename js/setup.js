@@ -54,8 +54,8 @@ var fireballColors = [
 ];
 
 var getRandomArrayElement = function (array) {
-    var randomIndex = Math.round(Math.random() * (array.length - 1));
-    return array[randomIndex];
+  var randomIndex = Math.round(Math.random() * (array.length - 1));
+  return array[randomIndex];
 };
 
 var renderRandomWizard = function () {
